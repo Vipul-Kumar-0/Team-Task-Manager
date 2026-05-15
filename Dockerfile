@@ -23,5 +23,6 @@ RUN pnpm --filter @workspace/api-server run build
 EXPOSE 8080
 
 ENV NODE_ENV=production
+ENV PORT=8080
 
 CMD ["node", "--enable-source-maps", "./artifacts/api-server/dist/index.mjs"]
