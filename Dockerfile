@@ -25,4 +25,5 @@ EXPOSE 8080
 ENV NODE_ENV=production
 ENV PORT=8080
 
-CMD ["node", "--enable-source-maps", "./artifacts/api-server/dist/index.mjs"]
+# Run schema push then start the server
+CMD sh -c "pnpm --filter @workspace/db run push && node --enable-source-maps ./artifacts/api-server/dist/index.mjs"
