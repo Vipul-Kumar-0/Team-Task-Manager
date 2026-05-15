@@ -1,7 +1,7 @@
-FROM node:20-alpine
+FROM node:22-alpine
 
-# Install pnpm
-RUN npm install -g pnpm
+# Install pnpm (v9 is compatible with Node 22 and stable)
+RUN npm install -g pnpm@9
 
 WORKDIR /app
 
