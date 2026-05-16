@@ -15,9 +15,9 @@ import { Unauthorized } from "@/pages/Unauthorized";
 import NotFound from "@/pages/not-found";
 
 export function AppRoutes() {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated, isLoading, isPendingAuth } = useAuth();
 
-  if (isLoading) {
+  if (isLoading || isPendingAuth) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="flex flex-col items-center gap-4">

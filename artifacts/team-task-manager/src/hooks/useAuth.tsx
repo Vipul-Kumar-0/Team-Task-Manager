@@ -22,6 +22,7 @@ export function useAuth() {
   }, [error]);
 
   const isAuthenticated = !!user && !!token;
+  const isPendingAuth = !!token && !user && !error;
 
   // Redirect to dashboard once authenticated (handles post-login navigation)
   useEffect(() => {
@@ -46,6 +47,7 @@ export function useAuth() {
     user,
     isLoading: isLoading && !!token,
     isAuthenticated,
+    isPendingAuth,
     login,
     logout,
     isAdmin: user?.role === "admin",
