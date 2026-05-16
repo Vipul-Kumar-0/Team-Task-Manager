@@ -40,8 +40,8 @@ app.use("/api", router);
 if (process.env.NODE_ENV === "production") {
   const frontendDist = path.resolve(__dirname, "../team-task-manager/dist/public");
   app.use(express.static(frontendDist));
-  // SPA fallback — serve index.html for all non-API routes
-  app.get("*", (_req, res) => {
+  // SPA fallback — serve index.html for all non-API routes (Express 5 syntax)
+  app.get("/{*path}", (_req, res) => {
     res.sendFile(path.join(frontendDist, "index.html"));
   });
 }
