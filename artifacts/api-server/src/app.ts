@@ -38,7 +38,7 @@ app.use("/api", router);
 
 // Serve frontend static files in production
 if (process.env.NODE_ENV === "production") {
-  const frontendDist = path.resolve(__dirname, "../team-task-manager/dist/public");
+  const frontendDist = path.resolve(__dirname, "../../team-task-manager/dist/public");
   app.use(express.static(frontendDist));
   // SPA fallback — serve index.html for all non-API routes (Express 5 syntax)
   app.get("/{*path}", (_req, res) => {
