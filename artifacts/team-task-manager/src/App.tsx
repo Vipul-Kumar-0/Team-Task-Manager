@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { queryClient } from "@/lib/queryClient";
 import { AppRoutes } from "@/AppRoutes";
+import { useAuth } from "@/hooks/useAuth"
 
 function App() {
   return (
