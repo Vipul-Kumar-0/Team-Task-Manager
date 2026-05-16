@@ -33,8 +33,8 @@ export function useAuth() {
   const login = useCallback((newToken: string) => {
     localStorage.setItem("ttm_token", newToken);
     setToken(newToken);
-    // Navigation is handled by the useEffect above once isAuthenticated becomes true
-  }, []);
+    setLocation("/dashboard");
+  }, [setLocation]);
 
   const logout = useCallback(() => {
     localStorage.removeItem("ttm_token");
