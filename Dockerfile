@@ -25,5 +25,4 @@ EXPOSE 8080
 ENV NODE_ENV=production
 ENV PORT=8080
 
-# Debug: print env vars, push schema, then start server
-CMD sh -c "echo 'DATABASE_URL='$DATABASE_URL && pnpm --filter @workspace/db run push && node --enable-source-maps ./artifacts/api-server/dist/index.mjs"
+CMD ["node", "--enable-source-maps", "./artifacts/api-server/dist/index.mjs"]
